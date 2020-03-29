@@ -1,0 +1,26 @@
+{
+  "name": "the-jet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@sanity/client": "^1.149.2",
+    "@sanity/image-url": "^0.140.17",
+    "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^9.7.5",
+    "file-loader": "^6.0.0",
+    "next": "9.3.1",
+    "postcss-import": "^12.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {
+    "url-loader": "^4.0.0"
+  }
+}
