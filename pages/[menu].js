@@ -29,10 +29,10 @@ const Menu = ({ menus, menu, menuSlug }) => {
         <div className="sm:flex sm:items-center sm:justify-center">
           <div className="mx-auto w-10/12 sm:w-auto">
             <h5 className="text-xl text-center">{getMenuTitle()} Menu</h5>
-            <div className="sm:flex sm:flex-wrap justify-start mx-auto">
+            <div className="sm:flex sm:flex-wrap justify-center mx-auto">
               {menu &&
                 menu.map(c => (
-                  <div key={c._id} className="my-4">
+                  <div key={c._id} className="my-4 sm:mx-8 sm:p-2">
                     <h5 className="text-xl">{c.name}</h5>
                     {c.categoryItems &&
                       c.categoryItems.map(i => (
