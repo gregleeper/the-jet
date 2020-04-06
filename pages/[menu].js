@@ -19,7 +19,7 @@ const itemsByCategory = `
 
 const Menu = ({ menus, menu, menuSlug }) => {
   function getMenuTitle() {
-    const title = menus.filter(m => m.slug.current === menuSlug);
+    const title = menus.filter((m) => m.slug.current === menuSlug);
     return title[0].title;
   }
 
@@ -27,15 +27,18 @@ const Menu = ({ menus, menu, menuSlug }) => {
     <Layout menus={menus}>
       <div className="mt-6 mx-auto">
         <div className="sm:flex sm:items-center sm:justify-center">
-          <div className="mx-auto w-10/12 sm:w-auto">
+          <div className=" mx-4 sm:w-full">
             <h5 className="text-xl text-center">{getMenuTitle()} Menu</h5>
-            <div className="sm:flex sm:flex-wrap justify-center mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 ">
               {menu &&
-                menu.map(c => (
-                  <div key={c._id} className="my-4 sm:mx-8 sm:p-2">
-                    <h5 className="text-xl">{c.name}</h5>
+                menu.map((c) => (
+                  <div key={c._id} className="my-4 sm:p-2">
+                    <div className="bg-white border-2 border-gray-600 px-2 py-1 my-2">
+                      <h5 className="text-xl text-black">{c.name}</h5>
+                    </div>
+
                     {c.categoryItems &&
-                      c.categoryItems.map(i => (
+                      c.categoryItems.map((i) => (
                         <ul className="text-base text-gray-700" key={i._id}>
                           <li key={i._id}>
                             <span className="justify-start">
@@ -67,8 +70,8 @@ const Menu = ({ menus, menu, menuSlug }) => {
 export const getStaticPaths = async () => {
   const menus = await sanity.fetch(menusQuery);
 
-  const paths = menus.map(m => ({
-    params: { menu: m.slug.current }
+  const paths = menus.map((m) => ({
+    params: { menu: m.slug.current },
   }));
   return { paths, fallback: false };
 };
